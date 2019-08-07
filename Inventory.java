@@ -1,6 +1,5 @@
 import java.util.Arrays;
-public class Inventory<T extends Copyable> implements ListInterface<T>, Copyable
-{
+public class Inventory<T extends Copyable> implements ListInterface<T>, Copyable{
 	private T[] List;
 	private int numberOfItems;
 	private boolean initialized = false;
@@ -68,8 +67,7 @@ public class Inventory<T extends Copyable> implements ListInterface<T>, Copyable
 		@return item at the end of the list.
 		@throws ListException
 	*/
-	public T set(T item, int position)throws ListException
-	{
+	public T set(T item, int position)throws ListException{
 		 checkInitialization();
 		 checkPosition(position);
 
@@ -77,7 +75,7 @@ public class Inventory<T extends Copyable> implements ListInterface<T>, Copyable
 		    throw new ListException("Error. Unable to replace. Replacement cannot be null.");
 
 		 if(isEmpty())
-			throw new ListException("Error. Unable to replace. List is empty.");
+		    throw new ListException("Error. Unable to replace. List is empty.");
 
 		    T savedItem = List[position];
 		    List[position] = item;
@@ -114,11 +112,11 @@ public class Inventory<T extends Copyable> implements ListInterface<T>, Copyable
 		if(checkIsNull(item))
 		    return false;
 
-			int indexPosition = getIndexOf(item);
-			List[indexPosition] = null;
+		    int indexPosition = getIndexOf(item);
+		    List[indexPosition] = null;
 		    closeListGap(indexPosition);
 		    numberOfItems--;
-			return true;
+		    return true;
 	}
 
 	/** Delete  item in the specified position of the list.
@@ -142,15 +140,16 @@ public class Inventory<T extends Copyable> implements ListInterface<T>, Copyable
 
 
 	public T get(int position)throws ListException{
+	
 		checkPosition(position);
-	    if (isEmpty())
+		
+	   	 if (isEmpty())
 			throw new ListException("Error. Unable to get list. List is empty.");
 
 			return  List[position];
   	}
 
-	public int find(T item, int start,int end)
-	{
+	public int find(T item, int start,int end){
 		int objectIndex = -4;
 
 		if(start < 0 || start > List.length || end < 0 || end > List.length  )
@@ -176,8 +175,7 @@ public class Inventory<T extends Copyable> implements ListInterface<T>, Copyable
 		return objectIndex;
  	}
 
-	public int findFirstOccurrence(T item)
-	{
+	public int findFirstOccurrence(T item){
 		for(int index = 0; index < numberOfItems; index++){
 			if(List[index].equals(item))
 				return index;
@@ -249,8 +247,7 @@ public class Inventory<T extends Copyable> implements ListInterface<T>, Copyable
 	}
 
 	private void ensureCapacity(int amount){
-		try
-		{
+		try{
 			T [] resizedList = (T[]) new Copyable[List.length + amount];
 
 			for(int index = 0; index < numberOfItems; index++){
@@ -263,8 +260,7 @@ public class Inventory<T extends Copyable> implements ListInterface<T>, Copyable
 		}
 	}
 
-	public void trimToSize()
-	{
+	public void trimToSize(){
 		T [] ModifiedList = (T[]) new Copyable[numberOfItems];
 
 		for(int index = 0; index < numberOfItems; index++){
@@ -282,8 +278,7 @@ public class Inventory<T extends Copyable> implements ListInterface<T>, Copyable
 			display(List,0,numberOfItems - 1);
 	}
 
-	private void display(T array[], int first, int last)
-	{
+	private void display(T array[], int first, int last){
 		//Display Both Halves of array
 		if(first == last)
 			System.out.println(List[first] + " ");
@@ -295,17 +290,15 @@ public class Inventory<T extends Copyable> implements ListInterface<T>, Copyable
 
 	}
 
-	private void checkCapacity()
-	{
+	private void checkCapacity(){
 		if(numberOfItems > MAX_CAPACITY)
 			throw new IllegalStateException("Attempt to create a List with a capacity that exceeds " + MAX_CAPACITY);
 	}
 
-	private void checkInitiallyGivenCapacity(int initialCapacity)
-	{
+	private void checkInitiallyGivenCapacity(int initialCapacity){
 	    if (initialCapacity > MAX_CAPACITY)
 	        throw new IllegalStateException("Attempt to create a List whose capacity exceeds " + "allowed maximum of " + MAX_CAPACITY);
-    }
+    	}
 
 	public void clear()throws ListException{
 		while(!isEmpty())
@@ -376,7 +369,7 @@ public class Inventory<T extends Copyable> implements ListInterface<T>, Copyable
 			for(int index = 0; index < numberOfItems; index++){
 				if(!List[index].equals(PolymorphicInventory.get(index)))
 					return false;
-		    }
+		    	}
 		}
 		catch(ListException e){
 			System.out.println("Error. Comparing two object using the get Method.");
@@ -405,12 +398,10 @@ public class Inventory<T extends Copyable> implements ListInterface<T>, Copyable
 	public Object clone()
 	{
 		Inventory<T> copyInventory = null;
-		try
-		{
+		try{
 			copyInventory = (Inventory<T>)super.clone();
 		}
-		catch(CloneNotSupportedException e)
-		{
+		catch(CloneNotSupportedException e){
 			throw new Error(e.toString());
 		}
 		copyInventory.List = List.clone();
