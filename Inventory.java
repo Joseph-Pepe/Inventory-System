@@ -107,7 +107,7 @@ public class Inventory<T extends Copyable> implements ListInterface<T>, Copyable
 		checkInitialization();
 
 		if(isEmpty())
-			return false;
+		    return false;
 
 		if(checkIsNull(item))
 		    return false;
