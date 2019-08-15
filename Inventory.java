@@ -21,7 +21,7 @@ public class Inventory<T extends Copyable> implements ListInterface<T>, Copyable
 	}
 
 	/** Adds the object into the Inventory list.
-	@return true if object != null
+	@return true if object == null
 	*/
 	public boolean add(T item){
 
