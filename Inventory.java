@@ -42,7 +42,7 @@ public class Inventory<T extends Copyable> implements ListInterface<T>, Copyable
 	}
 
 	/** Insert item into specified position of the Inventory list
-	@throws  ListException if item != null
+	@throws  ListException if item == null
 	*/
 	public void insert(int position, T item)throws ListException{
 
