@@ -22,7 +22,7 @@ public class WriteBinaryFile
 			// Close the file.
 			outputFile.close();
 		}
-		catch(IOException e)
+		catch(IOException io)
 		{
 			System.out.println("Unable to open file");
 		}
