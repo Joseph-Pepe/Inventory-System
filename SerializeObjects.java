@@ -25,12 +25,12 @@ public class SerializeObjects
 
 			//Read the Serialized objects from the file.
 			for(int index = 0; index < gameInventory.getCurrentSize(); index++)
-				listOfGames[index] = (VideoGame) objectInputFile.readObject();
+			    listOfGames[index] = (VideoGame) objectInputFile.readObject();
 
 
 			objectInputFile.close();
 
 			for(VideoGame currentGame: listOfGames)
-				System.out.println(currentGame + "\n");
+			    System.out.println(currentGame + "\n");
 	}
 }
