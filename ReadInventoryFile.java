@@ -20,8 +20,8 @@ public class ReadInventoryFile
 
 	   while(inputFile.hasNext())
 	   {
-		   String contents = inputFile.nextLine();
-		   System.out.println(contents);
+		  String contents = inputFile.nextLine();
+		  System.out.println(contents);
 	   }
 	   inputFile.close();
 	}
