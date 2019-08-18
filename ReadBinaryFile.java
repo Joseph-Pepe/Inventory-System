@@ -13,7 +13,7 @@ public class ReadBinaryFile
 		 DataInputStream  inputFile = openFile(fileName);
 
 		 while(inputFile == null)
-	     {
+	         {
 			   System.out.println("Error: (The file: [" + fileName + "]) does not exist.\n" + "Enter another file name: ");
 			   fileName = keyboard.nextLine();
 			   inputFile = openFile(fileName);
@@ -22,10 +22,10 @@ public class ReadBinaryFile
 		 System.out.println("Reading from the file:");
 		 String contents = "";
 		 // Read the contents of the file.
-	     while (!endOfFile)
-	     {
+	         while (!endOfFile)
+	         {
 		    try
-		    {
+		    { 
 			   contents = inputFile.readUTF();
 			   System.out.print(contents);
 		    }
@@ -33,12 +33,12 @@ public class ReadBinaryFile
 		    {
 			   endOfFile = true;
 		    }
-        }
+                 }
 
-        System.out.println("\nDone.");
+                 System.out.println("\nDone.");
 
 		// Close the file.
-        inputFile.close();
+                inputFile.close();
 	}
 
 	private static DataInputStream openFile(String filename)
