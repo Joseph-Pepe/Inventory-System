@@ -26,7 +26,7 @@ public class SaveInventoryItems
 			outputFile.println(gameInventory);
 
 			outputFile.close();
-      		System.out.println("Data written to the file.");
+      		        System.out.println("Data written to the file.");
 		}
 		catch(IOException io)
 		{
