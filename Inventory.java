@@ -270,8 +270,7 @@ public class Inventory<T extends Copyable> implements ListInterface<T>, Copyable
 	}
 
 	private void ensureCapacity(int amount){
-		try
-		{
+		try{
 			T [] resizedList = (T[]) new Copyable[List.length + amount];
 
 			for(int index = 0; index < numberOfItems; index++){
@@ -417,12 +416,10 @@ public class Inventory<T extends Copyable> implements ListInterface<T>, Copyable
 	public Object clone()
 	{
 		Inventory<T> copyInventory = null;
-		try
-		{
+		try{
 			copyInventory = (Inventory<T>)super.clone();
 		}
-		catch(CloneNotSupportedException e)
-		{
+		catch(CloneNotSupportedException e){
 			throw new Error(e.toString());
 		}
 		copyInventory.List = List.clone();
