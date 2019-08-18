@@ -21,7 +21,7 @@ public class Inventory<T extends Copyable> implements ListInterface<T>, Copyable
 	}
 
 	/** Adds the object into the Inventory list.
-	@return true if object == null
+		@return true if object != null
 	*/
 	public boolean add(T item){
 
@@ -42,7 +42,8 @@ public class Inventory<T extends Copyable> implements ListInterface<T>, Copyable
 	}
 
 	/** Insert item into specified position of the Inventory list
-	@throws  ListException if item == null
+		@throws  ListException if item == null.
+		@throws  IndexOutOfBounds if  the specified position is illegal.
 	*/
 	public void insert(int position, T item)throws ListException{
 
@@ -65,9 +66,10 @@ public class Inventory<T extends Copyable> implements ListInterface<T>, Copyable
 
 	/** replaces the object in a specific location with the specified object.
 		@return item at the end of the list.
-		@throws ListException
+		@throws ListException if item is null, exceeds the position of the list or if the list is empty.
 	*/
-	public T set(T item, int position)throws ListException{
+	public T set(T item, int position)throws ListException
+	{
 		 checkInitialization();
 		 checkPosition(position);
 
@@ -83,8 +85,8 @@ public class Inventory<T extends Copyable> implements ListInterface<T>, Copyable
   	}
 
   	/** Delete last item in the list
-	@return item at the end of the list.
-	@throws ListException if the inventory list is empty
+		@return item at the end of the list.
+		@throws ListException if the inventory list is empty.
 	*/
 	public T remove()throws ListException{
 		 checkInitialization();
@@ -100,7 +102,8 @@ public class Inventory<T extends Copyable> implements ListInterface<T>, Copyable
 
 
 	/** Delete specified item in the list.
-	@throws ListException if list is empty && item == null.
+		@return true if item is in list.
+		@throws ListException if list is empty or item == null.
 	*/
 	public boolean remove(T item){
 
@@ -120,8 +123,8 @@ public class Inventory<T extends Copyable> implements ListInterface<T>, Copyable
 	}
 
 	/** Delete  item in the specified position of the list.
-	@return item at the specified position.
-	@throws ListException if position exceeds list size || position <= 0
+		@return item at the specified position.
+		@throws ListException if position exceeds list position or the list is empty.
 	*/
 	public T remove(int position)throws ListException{
 
@@ -138,18 +141,24 @@ public class Inventory<T extends Copyable> implements ListInterface<T>, Copyable
 		  return deletedObject;
 	}
 
-
+	/** Get the item in the the specified position of the list.
+		@return item at the specified position.
+		@throws ListException if position exceeds list size, list is empty or position <= 0
+	*/
 	public T get(int position)throws ListException{
-	
 		checkPosition(position);
-		
-	   	 if (isEmpty())
+	    if (isEmpty())
 			throw new ListException("Error. Unable to get list. List is empty.");
 
 			return  List[position];
   	}
 
-	public int find(T item, int start,int end){
+	/** Get the item in the the specified location of the list.
+		@return position of the specified objects location.
+		@throws IndexOutOfBoundsException if the position given is illegal.
+	*/
+	public int find(T item, int start,int end)
+	{
 		int objectIndex = -4;
 
 		if(start < 0 || start > List.length || end < 0 || end > List.length  )
@@ -175,7 +184,11 @@ public class Inventory<T extends Copyable> implements ListInterface<T>, Copyable
 		return objectIndex;
  	}
 
-	public int findFirstOccurrence(T item){
+	/** Get the first occurrence of the item in the list.
+		@return the position of the specified item.
+	*/
+	public int findFirstOccurrence(T item)
+	{
 		for(int index = 0; index < numberOfItems; index++){
 			if(List[index].equals(item))
 				return index;
@@ -183,6 +196,9 @@ public class Inventory<T extends Copyable> implements ListInterface<T>, Copyable
 		return -1;
 	}
 
+	/** Get all the occurrences of the item in the list.
+		@return the position of the specified item.
+	*/
 	public int[] findAll(T item){
 
 		int[] location = new int[numberOfItems];
@@ -206,7 +222,7 @@ public class Inventory<T extends Copyable> implements ListInterface<T>, Copyable
 	}
 
 	/** Finds the specified object in the list and returns the position.
-	@return  The position of the object in the list.
+		@return  The position of the object in the list.
 	*/
 	private int getIndexOf(T item){
 
@@ -225,6 +241,9 @@ public class Inventory<T extends Copyable> implements ListInterface<T>, Copyable
 		return objectPosition;
 	}
 
+	/** Counts the amount of duplicate objects in the list for the specified item.
+		@return The number of occurrences of the object in the list.
+	*/
 	public int getFrequencyOf(T item){
 		int countSameItem = 0;
 
@@ -235,6 +254,9 @@ public class Inventory<T extends Copyable> implements ListInterface<T>, Copyable
 		return countSameItem;
 	}
 
+	/** Fills an array with the items in the list.
+		@return An array filled with the items in the list.
+	*/
 	public T[] toArray(){
 		checkInitialization();
 		T[] arrayCopy = (T[]) new Copyable[numberOfItems];
@@ -247,7 +269,8 @@ public class Inventory<T extends Copyable> implements ListInterface<T>, Copyable
 	}
 
 	private void ensureCapacity(int amount){
-		try{
+		try
+		{
 			T [] resizedList = (T[]) new Copyable[List.length + amount];
 
 			for(int index = 0; index < numberOfItems; index++){
@@ -260,7 +283,10 @@ public class Inventory<T extends Copyable> implements ListInterface<T>, Copyable
 		}
 	}
 
-	public void trimToSize(){
+	/** Reduces the size of the inventory to the number of items present in the list.
+	*/
+	public void trimToSize()
+	{
 		T [] ModifiedList = (T[]) new Copyable[numberOfItems];
 
 		for(int index = 0; index < numberOfItems; index++){
@@ -269,51 +295,43 @@ public class Inventory<T extends Copyable> implements ListInterface<T>, Copyable
 	    List = ModifiedList;
 	}
 
-	public void display()throws ListException{
-
-		checkInitialization();
-		if(isEmpty())
-			throw new ListException("Nothing to display.List is empty.");
-
-			display(List,0,numberOfItems - 1);
-	}
-
-	private void display(T array[], int first, int last){
-		//Display Both Halves of array
-		if(first == last)
-			System.out.println(List[first] + " ");
-		else{
-			int mid = first + (last - first) / 2;
-			display(array,first,mid);
-			display(array,mid + 1,last);
-		}
-
-	}
-
-	private void checkCapacity(){
+	private void checkCapacity()
+	{
 		if(numberOfItems > MAX_CAPACITY)
 			throw new IllegalStateException("Attempt to create a List with a capacity that exceeds " + MAX_CAPACITY);
 	}
 
-	private void checkInitiallyGivenCapacity(int initialCapacity){
+	private void checkInitiallyGivenCapacity(int initialCapacity)
+	{
 	    if (initialCapacity > MAX_CAPACITY)
 	        throw new IllegalStateException("Attempt to create a List whose capacity exceeds " + "allowed maximum of " + MAX_CAPACITY);
-    	}
+    }
 
+	/** Empties the list of items
+	*/
 	public void clear()throws ListException{
 		while(!isEmpty())
 			remove();
 	}
 
+	/** Checks to see if the specified item is in the list.
+		@return true if the item is in the list.
+	*/
 	public boolean contains(T item){
 		checkInitialization();
 		return getFrequencyOf(item) > -1;
 	}
 
+	/** Tells the size that the inventory was initialized to.
+		@return The size of the list.
+	*/
 	public int size(){
 		return List.length;
 	}
 
+	/** Gives the number of items in the inventory.
+		@return The number of items present in the list.
+	*/
 	public int getCurrentSize(){
 		return numberOfItems;
 	}
@@ -369,7 +387,7 @@ public class Inventory<T extends Copyable> implements ListInterface<T>, Copyable
 			for(int index = 0; index < numberOfItems; index++){
 				if(!List[index].equals(PolymorphicInventory.get(index)))
 					return false;
-		    	}
+		    }
 		}
 		catch(ListException e){
 			System.out.println("Error. Comparing two object using the get Method.");
@@ -398,10 +416,12 @@ public class Inventory<T extends Copyable> implements ListInterface<T>, Copyable
 	public Object clone()
 	{
 		Inventory<T> copyInventory = null;
-		try{
+		try
+		{
 			copyInventory = (Inventory<T>)super.clone();
 		}
-		catch(CloneNotSupportedException e){
+		catch(CloneNotSupportedException e)
+		{
 			throw new Error(e.toString());
 		}
 		copyInventory.List = List.clone();
@@ -417,4 +437,3 @@ public class Inventory<T extends Copyable> implements ListInterface<T>, Copyable
 		initialized = false;
 	}
 }
-
