@@ -147,10 +147,11 @@ public class Inventory<T extends Copyable> implements ListInterface<T>, Copyable
 	*/
 	public T get(int position)throws ListException{
 		checkPosition(position);
-	    if (isEmpty())
-			throw new ListException("Error. Unable to get list. List is empty.");
+		
+	    	if (isEmpty())
+		    throw new ListException("Error. Unable to get list. List is empty.");
 
-			return  List[position];
+	 	    return  List[position];
   	}
 
 	/** Get the item in the the specified location of the list.
@@ -298,20 +299,20 @@ public class Inventory<T extends Copyable> implements ListInterface<T>, Copyable
 	private void checkCapacity()
 	{
 		if(numberOfItems > MAX_CAPACITY)
-			throw new IllegalStateException("Attempt to create a List with a capacity that exceeds " + MAX_CAPACITY);
+		    throw new IllegalStateException("Attempt to create a List with a capacity that exceeds " + MAX_CAPACITY);
 	}
 
 	private void checkInitiallyGivenCapacity(int initialCapacity)
 	{
 	    if (initialCapacity > MAX_CAPACITY)
-	        throw new IllegalStateException("Attempt to create a List whose capacity exceeds " + "allowed maximum of " + MAX_CAPACITY);
+	            throw new IllegalStateException("Attempt to create a List whose capacity exceeds " + "allowed maximum of " + MAX_CAPACITY);
     }
 
 	/** Empties the list of items
 	*/
 	public void clear()throws ListException{
 		while(!isEmpty())
-			remove();
+		    remove();
 	}
 
 	/** Checks to see if the specified item is in the list.
