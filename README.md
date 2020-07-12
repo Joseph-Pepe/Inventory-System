@@ -12,4 +12,3 @@ Note: Requires a comprehensive understanding of Data Structures and Algorithms.
 
 Comparable interface used to compare objects to sort by the objects properties.
 
-python test/spec_tests.py --spec spec.txt --program PROGRAM
