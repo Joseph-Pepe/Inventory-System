@@ -12,3 +12,7 @@ Note: Requires a comprehensive understanding of Data Structures and Algorithms.
 ---
 > Comparable interface used to compare objects to sort by the objects properties.
 
+***[Copyable.java](https://github.com/Joseph-Pepe/Inventory-System/blob/master/Copyable.java)***
+---
+> Copyable interface used to duplicate the object and retain its properties.
+
