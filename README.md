@@ -16,7 +16,7 @@ Note: Requires a comprehensive understanding of Data Structures and Algorithms.
 ```
 
 
-```Comparable.java```
+`Comparable.java`
 ---
 > Comparable interface used to compare objects to sort by the objects properties.
 
