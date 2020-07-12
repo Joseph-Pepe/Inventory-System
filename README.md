@@ -32,4 +32,9 @@ Note: Requires a comprehensive understanding of Data Structures and Algorithms.
 ---
 > Reads the contents of a binary file and converts it to text format to be display on the command line. 
 
+***[ReadInventoryFile.java](https://github.com/Joseph-Pepe/Inventory-System/blob/master/ReadInventoryFile.java)***
+---
+> Reads the contents of a text file that displays the contents of each object in the collection.
+
+
 
