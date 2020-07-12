@@ -44,5 +44,9 @@ Note: Requires a comprehensive understanding of Data Structures and Algorithms.
 ---
 > Performs serialization and de-serialization on the Videogame objects in the collection.
 
+***[Videogame.java](https://github.com/Joseph-Pepe/Inventory-System/blob/master/VideoGame.java)***
+---
+> The object that will be stored in the inventory.
+
 
 
