@@ -1,6 +1,8 @@
 # Inventory-System
 Inventory System developed by implementing a compact data structure using an array in Java. 
 
+![Markdown Image](https://www.google.com/url?sa=i&url=https%3A%2F%2Fmkyong.com%2Fjava%2Fjava-how-to-declare-and-initialize-an-array%2F&psig=AOvVaw0yUHGOt1QfjpL6EJvWSnSh&ust=1594674244914000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCPjU0dHOyOoCFQAAAAAdAAAAABAJ)
+
 A List Data Structure using an array implementation.
 
 Note: Requires a comprehensive understanding of Data Structures and Algorithms.
