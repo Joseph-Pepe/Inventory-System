@@ -3,9 +3,10 @@
 ```python
 Inventory System developed by implementing a compact data structure using an array in Java. 
 ```
-![Markdown Image](https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQKTVpnwjAqa1qYH2S3ImH6gooWbRKk--5AhQ&usqp=CAU)     | Datastructure | Implementation |
-                                                                                                                             | ------------- | -------------- |
-                                                                                                                             |     List      |     Array      |
+![Markdown Image](https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQKTVpnwjAqa1qYH2S3ImH6gooWbRKk--5AhQ&usqp=CAU)    
+| Datastructure | Implementation |                                                                                                                      
+| ------------- | -------------- |
+|     List      |     Array      |
 
 
 ```python
