@@ -16,3 +16,7 @@ Note: Requires a comprehensive understanding of Data Structures and Algorithms.
 ---
 > Copyable interface used to duplicate the object and retain its properties.
 
+***[Inventory.java](https://github.com/Joseph-Pepe/Inventory-System/blob/master/Inventory.java)***
+---
+> A generic container used to store a collection of objects of any type.
+
