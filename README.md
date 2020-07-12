@@ -6,3 +6,6 @@ A List Data Structure using an array implementation.
 Note: Requires a comprehensive understanding of Data Structures and Algorithms.
 
 
+***Comparable.java***
+
+Comparable interface used to compare objects to sort by the objects properties.
