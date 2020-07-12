@@ -24,3 +24,8 @@ Note: Requires a comprehensive understanding of Data Structures and Algorithms.
 ---
 > An exception used in the Inventory class to indicate erroneous behavior by displaying a run-time error message.
 
+***[ListInterface.java](https://github.com/Joseph-Pepe/Inventory-System/blob/master/ListInterface.java)***
+---
+> Interface used by the Inventory class to enforce the collection to act as a List data structure.
+
+
