@@ -48,5 +48,9 @@ Note: Requires a comprehensive understanding of Data Structures and Algorithms.
 ---
 > The object that will be stored in the inventory.
 
+***[VideogameException.java](https://github.com/Joseph-Pepe/Inventory-System/blob/master/VideoGameException.java)***
+---
+>  An exception used in the Videogame class to indicate erroneous behavior by displaying a run-time error message.
+
 
 
