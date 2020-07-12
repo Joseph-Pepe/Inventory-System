@@ -1,5 +1,5 @@
 # Inventory-System
-Inventory System developed by implementing a compact data structure using an array in the the Java programming language. Its a Generic Type container built from scratch that can hold objects.
+Inventory System developed by implementing a compact data structure using an array in Java. 
 
 A List Data Structure using an array implementation.
 
@@ -18,7 +18,7 @@ Note: Requires a comprehensive understanding of Data Structures and Algorithms.
 
 ***[Inventory.java](https://github.com/Joseph-Pepe/Inventory-System/blob/master/Inventory.java)***
 ---
-> A generic container used to store a collection of objects of any type.
+> A Generic Type container used to store a collection of objects of any type.(Built from scratch)
 
 ***[ListException.java](https://github.com/Joseph-Pepe/Inventory-System/blob/master/ListException.java)***
 ---
