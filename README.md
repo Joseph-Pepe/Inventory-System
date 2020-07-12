@@ -16,7 +16,7 @@ Note: Requires a comprehensive understanding of Data Structures and Algorithms.
 ```
 
 
-[`Comparable.java`](https://github.com/Joseph-Pepe/Inventory-System/blob/master/Comparable.java)
+#[`Comparable.java`](https://github.com/Joseph-Pepe/Inventory-System/blob/master/Comparable.java)
 ---
 > Comparable interface used to compare objects to sort by the objects properties.
 
