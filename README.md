@@ -3,8 +3,9 @@ Inventory System developed by implementing a compact data structure using an arr
 
 ![Markdown Image](https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQKTVpnwjAqa1qYH2S3ImH6gooWbRKk--5AhQ&usqp=CAU)
 
+```python
 A List Data Structure using an array implementation.
-
+```
 Note: Requires a comprehensive understanding of Data Structures and Algorithms.
 
 
