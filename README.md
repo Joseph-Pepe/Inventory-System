@@ -28,4 +28,8 @@ Note: Requires a comprehensive understanding of Data Structures and Algorithms.
 ---
 > Interface used by the Inventory class to enforce the collection to act as a List data structure.
 
+***[ReadBinaryFile.java](https://github.com/Joseph-Pepe/Inventory-System/blob/master/ReadBinaryFile.java)***
+---
+> Reads the contents of a binary file and converts it to text format to be display on the command line. 
+
 
