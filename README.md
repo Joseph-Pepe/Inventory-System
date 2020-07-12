@@ -34,7 +34,7 @@ Note: Requires a comprehensive understanding of Data Structures and Algorithms.
 
 ***[ReadInventoryFile.java](https://github.com/Joseph-Pepe/Inventory-System/blob/master/ReadInventoryFile.java)***
 ---
-> Reads the contents of a text file that displays the data of each object in the collection.
+> Reads the contents of a text file that displays the data of each object in the collection saved.
 
 
 
