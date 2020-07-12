@@ -36,5 +36,10 @@ Note: Requires a comprehensive understanding of Data Structures and Algorithms.
 ---
 > Reads the contents of a text file that displays the data of each object in the collection saved.
 
+***[SaveInventoryFile.java](https://github.com/Joseph-Pepe/Inventory-System/blob/master/SaveInventoryItems.java)***
+---
+> Saves all the objects data from inside the collection to a text file.
+
+
 
 
