@@ -52,5 +52,9 @@ Note: Requires a comprehensive understanding of Data Structures and Algorithms.
 ---
 >  An exception used in the Videogame class to indicate erroneous behavior by displaying a run-time error message.
 
+***[WriteBinaryFile.java](https://github.com/Joseph-Pepe/Inventory-System/blob/master/WriteBinaryFile.java)***
+---
+>  Converts all the Videogame object's data in the collection to a binary file.
+
 
 
