@@ -20,3 +20,7 @@ Note: Requires a comprehensive understanding of Data Structures and Algorithms.
 ---
 > A generic container used to store a collection of objects of any type.
 
+***[ListException.java](https://github.com/Joseph-Pepe/Inventory-System/blob/master/ListException.java)***
+---
+> An exception used in the Inventory class to indicate erroneous behavior by displaying a run-time error message.
+
